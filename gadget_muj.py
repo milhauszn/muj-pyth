@@ -11,8 +11,9 @@ import datetime
 
 from device import Device
 
-device = Device(device="/dev/ttyUSB0")
-reader = device.gen_lines()
+if __name__ == "__main__":
+    device = Device(device="/dev/ttyUSB0")
+    reader = device.gen_lines()
     while True:
         line = reader.next()
         #date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
